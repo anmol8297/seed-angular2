@@ -20,7 +20,7 @@ export class MessageService {
       ? "?token=" + localStorage.getItem("token")
       : "";
     return this.http
-      .post("http://ng-node.herokuapp.com/message" + token, body, { headers: headers })
+      .post("https://ng-node.herokuapp.com/message" + token, body, { headers: headers })
       .map((response: Response) => {
         const result = response.json();
         const message = new Message(
@@ -40,7 +40,7 @@ export class MessageService {
 
   getMessages() {
     return this.http
-      .get("http://ng-node.herokuapp.com/message")
+      .get("https://ng-node.herokuapp.com/message")
       .map((response: Response) => {
         const messages = response.json().obj;
         let transformedMessages: Message[] = [];
@@ -75,7 +75,7 @@ export class MessageService {
       : "";
     return this.http
       .patch(
-        "http://ng-node.herokuapp.com/message/" + message.messageId + token,
+        "https://ng-node.herokuapp.com/message/" + message.messageId + token,
         body,
         { headers: headers }
       )
@@ -92,7 +92,7 @@ export class MessageService {
       ? "?token=" + localStorage.getItem("token")
       : "";
     return this.http
-      .delete("http://ng-node.herokuapp.com/message/" + message.messageId + token)
+      .delete("https://ng-node.herokuapp.com/message/" + message.messageId + token)
       .map((response: Response) => response.json())
       .catch((error: Response) => {
         this.errorService.handleError(error.json());
