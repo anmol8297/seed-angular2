@@ -12,7 +12,7 @@ var messageRoutes = require('./routes/messages');
 var userRoutes = require('./routes/user');
 
 var app = express();
-mongoose.connect('mongodb://angular2-test:angular2-test@ds129906.mlab.com:29906/angular2-deployment', {useMongoClient: true})
+mongoose.connect('mongodb://angular-test:test_pass@ds129926.mlab.com:29926/angular-deployment', {useMongoClient: true})
         .then((db) => {
             console.log('Connected to server correctly');
         }, (error) => {
