@@ -1,4 +1,3 @@
 export class Error {
-    constructor(public title: String,
-                public message: String) {}
+    constructor(public title: String, public message: String) {}
 }
